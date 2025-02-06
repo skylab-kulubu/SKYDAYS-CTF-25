@@ -1,4 +1,5 @@
 # Initial
+![](imgs/osint.png)
 `80` portunda çalışan web sitesinde kullanıcı adlarını doğru kombinasyonları wordlist oluşturacak şekilde kullandıktan sonra verilen IP adresindeki Domain Controllera [kerberoasting](https://attack.mitre.org/techniques/T1558/003/) saldırısı gerçekleştirilmelidir.
 Araç olarak [kerbrute](https://github.com/TarlogicSecurity/kerbrute) veya Kali Linux ile beraber gelen `impacket-GetNPUsers` kullanılabilir.
 
