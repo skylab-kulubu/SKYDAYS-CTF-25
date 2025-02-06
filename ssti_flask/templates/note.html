@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ note[0] }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+</head>
+<body>
+        <div class="container mt-5">
+        <h1 class="mb-4">{{ note[0] }}</h1>
+        <p style="word-wrap: break-word; overflow-wrap: break-word;">{{ note[1] }}</p>
+        <small class="text-muted">Author: {{ note[2] }} | Date: {{ note[3] }}</small>
+        <br>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary mt-3">Back to Notes</a>
+    </div>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.js') }}"></script>
+</body>
+</html>

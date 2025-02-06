@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    networks:
+      - ssti
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/:/etc/nginx/conf.d/
+      - ./static:/app/static
+    depends_on:
+      - web
+    networks:
+      - ssti
+
+volumes:
+  static:
+
+networks:
+  ssti:
