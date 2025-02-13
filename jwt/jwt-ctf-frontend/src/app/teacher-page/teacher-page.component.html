@@ -1,0 +1,13 @@
+<div class="admin-page-container" *ngIf="isLoggedIn">
+   <div><button (click)="logOut()">Çıkış Yap</button></div>
+    <h2>Öğrenciler</h2>
+    <ul>
+      <li *ngFor="let student of students" (click)="viewStudentHomework(student.studentId)">
+        {{ student.nameSurname }}
+      </li>
+    </ul>
+  </div>
+<div *ngIf="!isLoggedIn">
+  Giriş yapınız
+</div>
+  

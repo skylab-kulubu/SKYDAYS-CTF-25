@@ -1,0 +1,29 @@
+.admin-page-container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f4f4f4;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  li:hover {
+    background-color: #e0e0e0;
+  }
+  
