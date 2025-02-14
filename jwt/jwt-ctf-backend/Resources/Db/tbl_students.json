@@ -1,0 +1,82 @@
+[
+  {
+    "StudentId": "510991d5-1122-428b-a51c-024e345c34f5",
+    "NameSurname": "Ali Yılmaz",
+    "Homework": "Dummy Data",
+    "Password": "BJePTWARye7mqGSura5PnOomnvN9OZyCFhAMjUbZOOw=",
+    "Salt": "xyz123",
+    "Grade": 1
+  },
+  {
+    "StudentId": "9bb18cf7-413e-46df-8c32-bd18a2e82d72",
+    "NameSurname": "Ayşe Demir",
+    "Homework": "Dummy Data",
+    "Password": "lNwTW/zs4H8leHJr4x4jUi+i/gghOxfAbPWLV6tZgw0=",
+    "Salt": "xyz456",
+    "Grade": 1
+  },
+  {
+    "StudentId": "b57dec62-6078-4b17-aca4-7bbe92131ed9",
+    "NameSurname": "Mehmet Kaya",
+    "Homework": "Dummy Data",
+    "Password": "zccaHEKCpEWWHVZszcegNf8xJd6Vr3YGXvBZ13fLSoM=",
+    "Salt": "xyz789",
+    "Grade": 1
+  },
+  {
+    "StudentId": "3dcd40bd-2ec5-455b-8cde-c074f4865585",
+    "NameSurname": "Zeynep Çelik",
+    "Homework": "Dummy Data",
+    "Password": "3okQjXAECXSbeskwQtXaxYg8TMLWBvcOBsDu9Iqp44M=",
+    "Salt": "xyz987",
+    "Grade": 1
+  },
+  {
+    "StudentId": "5ce312b0-da60-4c99-bdb6-6ad38fce4b7c",
+    "NameSurname": "Burak Şahin",
+    "Homework": "Dummy Data",
+    "Password": "3IK1xZPYKQroY/1wny/pxWiL8kC17vt7VQFQk+Yivg0=",
+    "Salt": "xyz654",
+    "Grade": 1
+  },
+  {
+    "StudentId": "b602087b-fd63-44cd-95ae-eccf9ab72a96",
+    "NameSurname": "Elif Arslan",
+    "Homework": "Dummy Data",
+    "Password": "dMRbEHDFpDlroGbxXEbhanSeoQsZCpMNvdiOpwgRRc0=",
+    "Salt": "xyz321",
+    "Grade": 1
+  },
+  {
+    "StudentId": "33726209-b7c2-4c69-a562-5d4ca8f58760",
+    "NameSurname": "Hasan Koç",
+    "Homework": "Dummy Data",
+    "Password": "KxZymI2OvzkrUcvOXrWIoUc7tC5bnDrNMqcIOUpDfc0=",
+    "Salt": "xyz000",
+    "Grade": 1
+  },
+  {
+    "StudentId": "12b9cf71-9d1e-42db-9704-2b21a2d7dce9",
+    "NameSurname": "Gamze Güneş",
+    "Homework": "Dummy Data",
+    "Password": "ItQM4rjjE4BcYJ1Wtn08XRvxllsqDQqOW1LnrevY+Hc=",
+    "Salt": "xyz555",
+    "Grade": 1
+  },
+  {
+    "StudentId": "aab72ac2-a0ef-41bf-a2e3-c426a499b10f",
+    "NameSurname": "Murat Eren",
+    "Homework": "Cevabınızı değiştiriniz.",
+    "Password": "zRVdwCdVPoMcE+MNWLjbP/K52LLmomWGztF8t/onnd4=",
+    "Salt": "xyz222",
+    "Grade": 0
+  },
+  {
+    "StudentId": "23872c0a-2d49-41ce-9b15-26566856836b",
+    "NameSurname": "Selin Aydın",
+    "Homework": "Cybersecurty is really important today becuase it helps protect our personal info, systems, and netwroks from things like hacking, data breachs, and malwre. As we use more tech for work, skool, and daily life, not having good securty can lead to big problms like losing money, damging your repution, or facing legel issues. Good cybersecurty keeps data safe and reliable, wich builds trust and keeps things runing smoothly. Since cyber threats are alwasy changing, it's key to have strong securty to stay protected from new riscs.",
+    "Password": "AnAjFDx0f8Q1bLcBD++f5I1maWv/lkTezFl8x1c8SYo=",
+    "Salt": "xyz111",
+    "Grade": 100
+  }
+]

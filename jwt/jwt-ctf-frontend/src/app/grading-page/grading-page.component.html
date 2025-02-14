@@ -1,0 +1,17 @@
+<div class="student-homework-container" *ngIf="isLoggedIn">
+  <div><button (click)="logOut()">Çıkış Yap</button></div>
+    <h2>{{ studentName }} - Ödev</h2>
+    <div class="homework-text">
+      <p>{{ homework }}</p>
+    </div>
+    <div>
+      <label for="grade">Not:</label>
+      <input type="number" id="grade" [(ngModel)]="newGrade" min="0" max="100" [disabled]="grade != 0"/>
+    </div>
+    <button (click)="submitGrade()" [disabled]="grade != 0" [ngClass]="{'disabled-button': grade != 0}">Notu kaydet</button>
+  </div>
+
+  <div *ngIf="!isLoggedIn">
+    Giriş Yapınız
+  </div>
+  
