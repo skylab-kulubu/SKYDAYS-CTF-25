@@ -67,12 +67,11 @@ export class StudentPageComponent implements OnInit {
       })
     ).subscribe({
       next: (response) => {
-        debugger
         const pattern = /^.*\{.*\}$/;
         if (pattern.test(response)) {
           window.alert(response);
         } 
-        else if(response === "equal"){
+        else if(response === "updated"){
           this.authService.setHomework(this.saveHomeworkRequest.homework);
         }
         else{
@@ -80,7 +79,6 @@ export class StudentPageComponent implements OnInit {
         }
       },
       error: (err) => {
-        debugger
         this.savedMessage = "Güncelleme sırasında bir hata oluştu";
       }
     });  

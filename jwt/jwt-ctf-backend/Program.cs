@@ -2,7 +2,7 @@ using jwt_ctf_backend.Interfaces;
 using jwt_ctf_backend.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.WebHost.UseUrls("http://*:7106");
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -11,7 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
 {
-    builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+    builder.WithOrigins("http://localhost:8080").AllowAnyMethod().AllowAnyHeader();
 }));
 
 builder.Services.AddScoped<IStudentService, StudentRepository>();
@@ -23,11 +23,8 @@ builder.Services.AddScoped<ICryptionService, CryptionRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 

@@ -5,6 +5,22 @@
   <img src="https://github.com/user-attachments/assets/eb3c0dce-2ff7-417e-9497-461a512d64a7" alt="SkySecLogo" width="200">  
 </div>
 
+## Docker İle Ayağa Kaldırma
+
+1. **Docker Engine'in kurulu ve çalışıyor olduğundan emin ol:**
+
+2. **console'u aç ve çalıştır:**
+   ```sh
+   - cd .../jwt
+   - docker compose up --build
+   ```
+
+3. **Tarayıcıda görüntüle:**
+   ```sh
+   - frontend  -->  http://localhost:8080
+   - backend   -->  http://localhost:7106/swagger/index.html
+   ```
+
 ## CTF Çözümü
 
 1. **Login sayfasına git:**
