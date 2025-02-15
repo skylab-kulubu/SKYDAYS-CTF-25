@@ -5,12 +5,13 @@ import { CryptionService } from './cryption.service';
 import { LoginRequest } from '../models/login-request';
 import { LoginAnwser } from '../models/login-answer';
 import { switchMap, tap } from 'rxjs/operators';
+import { apiUrl } from './api-url';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private baseApiUrl = 'https://localhost:7106/api/Auth';
+  private apiName = 'Auth';
   private role: string | null = null;
   private id: string | null = null;
   private homework: string | null = null;
@@ -28,7 +29,7 @@ export class AuthService {
     }
   }
   login(loginRequest: LoginRequest): Observable<LoginAnwser> {
-    return this.http.post<LoginAnwser>(`${this.baseApiUrl}/login`, loginRequest).pipe(
+    return this.http.post<LoginAnwser>(`${apiUrl}/${this.apiName}/login`, loginRequest).pipe(
       tap((response: LoginAnwser) => {
         if (response.token) {
           this.handleLoginResponse(response);

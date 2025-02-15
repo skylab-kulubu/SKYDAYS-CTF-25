@@ -46,8 +46,6 @@ export class LoginComponent{
       next: (response) => {
         const id: string  | null = this.authService.getId();
         const role: string | null = this.authService.getRole();
-        console.log(id);
-        console.log(role);
         if(id != null){
           if(role != "teacher"){
             this.router.navigate([`student-page/${id}`]);
