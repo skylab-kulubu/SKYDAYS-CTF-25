@@ -1,0 +1,4 @@
+zone "skydays.ctf" {
+    type master;
+    file "/etc/bind/db.skydays.ctf";
+};
