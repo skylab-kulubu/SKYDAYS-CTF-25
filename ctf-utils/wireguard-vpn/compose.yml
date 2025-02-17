@@ -1,0 +1,44 @@
+version: "3"
+
+services:
+  wireguard-ui:
+    image: ngoduykhanh/wireguard-ui:latest
+    container_name: wireguard-ui
+    cap_add:
+      - NET_ADMIN
+    # required to show active clients. with this set, you don't need to expose the ui port (5000) anymore
+    network_mode: host
+    environment:
+      - SENDGRID_API_KEY
+      - EMAIL_FROM_ADDRESS
+      - EMAIL_FROM_NAME
+      - SESSION_SECRET
+      - WGUI_USERNAME=admin
+      - WGUI_PASSWORD=admin
+      - WG_CONF_TEMPLATE
+      - WGUI_MANAGE_START=true
+      - WGUI_MANAGE_RESTART=true
+      # Custom Settings
+      - WGUI_DEFAULT_CLIENT_ALLOWED_IPS=10.0.0.0/16
+      - WGUI_SERVER_INTERFACE_ADDRESSES=10.10.0.0/16,10.0.0.0/16
+      - WGUI_SERVER_POST_UP_SCRIPT="iptables -A FORWARD -i %1 -j ACCEPT; iptables -A FORWARD -o wg0 -j ACCEPT; iptables -t nat -A POSTROUTING -o eth+ -j MASQUERADE"
+      - WGUI_SERVER_POST_DOWN_SCRIPT="iptables -D FORWARD -i %1 -j ACCEPT; iptables -D FORWARD -o wg0 -j ACCEPT; iptables -t nat -D POSTROUTING -o eth+ -j MASQUERADE"
+      - WGUI_DEFAULT_CLIENT_USE_SERVER_DNS=false    
+      # EMAIL options
+      - EMAIL_FROM_ADDRESS=${EMAIL_ADDRESS}
+      - EMAIL_FROM_NAME=Wireguard VPN
+      - SMTP_HOSTNAME=smtp.gmail.com
+      - SMTP_PORT=587
+      - SMTP_USERNAME=${EMAIL_ADDRESS}
+      - SMTP_PASSWORD=${APPLICATION_PASSWORD}
+      - SMTP_AUTH_TYPE=LOGIN
+    logging:
+      driver: json-file
+      options:
+        max-size: 50m
+    volumes:
+      - db:/app/db
+      - /etc/wireguard:/etc/wireguard
+
+volumes:
+  db:
