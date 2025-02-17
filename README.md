@@ -16,3 +16,7 @@
 
 # Active Directory
 - [AD DACL](/ADDACL)
+
+
+# Structure 
+![diagram](ctf-utils/SKYDAYS.jpg)
