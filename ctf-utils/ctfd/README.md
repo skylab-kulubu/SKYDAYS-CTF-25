@@ -35,3 +35,7 @@ docker compose up -d --force-recreate --build
      depends_on:
        - ctfd
 ```
+
+
+# Index 
+`index.html` içerisindeki logo dosyasının hash değerini değiştirin
