@@ -35,7 +35,7 @@ options {
 ```
 
 ```bash 
-sudo vim /etc/bind/d.skydays.ctf
+sudo vim /etc/bind/db.skydays.ctf
 $TTL    604800
 @       IN      SOA     ns1.skydasys.ctf. admin.skydays.ctf. (
                               2023021701 ; Serial
