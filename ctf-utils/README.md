@@ -12,6 +12,10 @@ E-posta adresinize gönderilen `wg0.conf` dosyasını `/etc/wireguard` klasörü
 
 ## Alan Adlarına Erişim
 
+```bash
+systemctl stop systemd-resolved.service
+```
+
 `/etc/resolv.conf` dosyanız aynen şu şekilde olmalı 
 
 ```
