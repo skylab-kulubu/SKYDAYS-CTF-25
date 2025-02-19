@@ -1,0 +1,5 @@
+README.md
+Dockerfile
+compose.yml
+venv/
+nginx/
