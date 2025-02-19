@@ -130,3 +130,10 @@ go to
 ```plaintext
 http://localhost/note/<id>?cmd=whoami
 ```
+
+
+# Docker Compose
+
+```bash
+docker compose up -d --scale web=5
+```
