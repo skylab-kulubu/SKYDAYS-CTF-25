@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    background-image: url('https://i.pinimg.com/736x/11/4f/1c/114f1c5a3898297a2b8cf79d413b7339.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    text-align: center;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: -1;
+}
+
+.container {
+    max-width: 1400px;
+    width: 90%;
+    padding: 50px;
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 15px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+}
+
+h1.title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #bb86fc;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #03dac6;
+    margin-top: 15px;
+}
+
+.description {
+    font-size: 1.3rem;
+    color: #bbb;
+    margin-bottom: 25px;
+    line-height: 1.6;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+ul li {
+    font-size: 1.2rem;
+    color: #ff9800;
+    margin: 10px 0;
+}
+
+.file-input {
+    display: none;
+}
+
+
+.file-label {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6200ea;
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    margin-bottom: 20px;
+}
+
+.file-label:hover {
+    background-color: #3700b3;
+    transform: scale(1.05);
+}
+
+.file-label:active {
+    transform: scale(1);
+}
+
+.file-name {
+    font-size: 1rem;
+    color: #bbb;
+    margin-top: 10px;
+}
+
+.upload-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #6200ea;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    margin-top: 20px;
+}
+
+.upload-btn:hover {
+    background-color: #3700b3;
+    transform: scale(1.1);
+}
+
+.upload-btn:active {
+    transform: scale(1);
+}
+
+.terminal {
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    text-align: left;
+    white-space: pre-wrap;
+    color: #03dac6;
+    font-family: 'Courier New', monospace;
+    overflow-x: auto;
+    max-height: 300px;
+    margin-top: 30px;
+    box-shadow: 0 6px 15px rgba(3, 218, 198, 0.4);
+}
+
+.box {
+    background-color: #1a237e;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2);
+    margin-bottom: 30px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.scrollable-content {
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.result-box {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.image-preview,
+.ascii-output {
+    width: 48%;
+    height: 500px;
+    border-radius: 12px;
+    background-color: #222;
+    padding: 20px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.result-box .ascii-output {
+    order: 1;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .result-box {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .image-preview,
+    .ascii-output {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2.2rem;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+}
