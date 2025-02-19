@@ -1,0 +1,14 @@
+<div class="login-container">
+    <h2>Giriş Yap</h2>
+    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+      <div>
+        <label for="name-surname">Ad Soyad</label>
+        <input type="text" id="name-surname" name="name-surname" [(ngModel)]="loginRequest.nameSurname" required />
+      </div>
+      <div>
+        <label for="password">Şifre</label>
+        <input type="password" id="password" name="password" [(ngModel)]="loginRequest.password" required />
+      </div>
+      <button type="submit" [disabled]="!loginForm.form.valid">Login</button>
+    </form>
+  </div>

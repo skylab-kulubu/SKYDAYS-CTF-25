@@ -1,0 +1,25 @@
+<div class="user-page-container" *ngIf="isLoggedIn">
+    <div><button (click)="logOut()">Çıkış Yap</button></div>
+    <h2>Ödev Sayfası</h2>
+    <textarea 
+      [(ngModel)]="saveHomeworkRequest.homework" 
+      placeholder="Ödevinizi buraya yazın..." 
+      rows="15" 
+      cols="80">
+    </textarea>
+    <div>
+      <button (click)="saveProgress()">Kaydet</button>
+    </div>
+    <div *ngIf="isSaveClicked">
+      <label for="password">Onaylamak için şifrenizi giriniz:   </label>
+      <input type="password" id="password" name="password" [(ngModel)]="saveHomeworkRequest.password"  required />
+      <button (click)="updateApproved()">Onayla</button>
+    </div>
+    <div *ngIf="savedMessage" class="saved-message">
+      <p>{{ savedMessage }}</p>
+    </div>
+  </div>
+<div *ngIf="!isLoggedIn">
+  Giriş Yapınız
+</div>
+  
