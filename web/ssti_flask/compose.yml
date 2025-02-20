@@ -13,6 +13,8 @@ services:
     depends_on:
       - db
     restart: always
+    expose:
+      - 5000
   db:
     image: mysql
     restart: always
