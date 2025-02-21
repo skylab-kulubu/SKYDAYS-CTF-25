@@ -1,7 +1,7 @@
 import time
 import flag
 
-#flag format skyctf25{}, all lowercase
+#flag is all lowercase
 
 timestamp = str(int(time.time()))
 digits = []
