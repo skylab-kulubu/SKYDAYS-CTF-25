@@ -39,7 +39,7 @@
             // 
             this.btnAnswer.BackColor = System.Drawing.Color.Red;
             this.btnAnswer.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.btnAnswer.Location = new System.Drawing.Point(128, 325);
+            this.btnAnswer.Location = new System.Drawing.Point(416, 382);
             this.btnAnswer.Name = "btnAnswer";
             this.btnAnswer.Size = new System.Drawing.Size(185, 43);
             this.btnAnswer.TabIndex = 6;
@@ -51,7 +51,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label1.Location = new System.Drawing.Point(114, 283);
+            this.label1.Location = new System.Drawing.Point(402, 340);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 24);
             this.label1.TabIndex = 5;
@@ -59,7 +59,7 @@
             // 
             // txtAnswer
             // 
-            this.txtAnswer.Location = new System.Drawing.Point(186, 285);
+            this.txtAnswer.Location = new System.Drawing.Point(474, 342);
             this.txtAnswer.Name = "txtAnswer";
             this.txtAnswer.Size = new System.Drawing.Size(117, 22);
             this.txtAnswer.TabIndex = 4;
@@ -67,9 +67,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ReverseEngineeringCtf.Properties.Resources._2;
-            this.pictureBox1.Location = new System.Drawing.Point(51, 58);
+            this.pictureBox1.Location = new System.Drawing.Point(311, 53);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(365, 204);
+            this.pictureBox1.Size = new System.Drawing.Size(441, 272);
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
             // 
@@ -78,7 +78,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(448, 450);
+            this.ClientSize = new System.Drawing.Size(1102, 492);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnAnswer);
             this.Controls.Add(this.label1);

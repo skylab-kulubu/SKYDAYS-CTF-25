@@ -2,9 +2,10 @@ version: '3.8'
 
 services:
   backend:
-    build:
-      context: ./jwt-ctf-backend
-      dockerfile: Dockerfile
+    #build:
+     # context: ./jwt-ctf-backend
+     # dockerfile: Dockerfile
+    image: amahird/backend.dizci.ctf
     expose:
       - 7106
     environment:
@@ -14,10 +15,7 @@ services:
       - jwt-amd
 
   frontend:
-    build:
-      context: ./jwt-ctf-frontend
-      dockerfile: Dockerfile
-
+    image: amahird/frontend.dizci.ctf
     expose:
       - 80
     depends_on:
