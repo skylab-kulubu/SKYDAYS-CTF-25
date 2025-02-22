@@ -17,8 +17,6 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    ports:
-      - "8080:8080"
     environment:
       - DB_SOURCE=postgresql://baho:secret@postgres:5432/mydb?sslmode=disable
     depends_on:
@@ -33,12 +31,9 @@ services:
     build: 
       context: ./frontend
       dockerfile: Dockerfile
-    ports:
-      - "3000:80"
     restart: always
     networks:
       - sqli
-
 
   nginx:
     image: nginx:latest
@@ -46,7 +41,6 @@ services:
       - "80:80"
     volumes:
       - ./nginx/:/etc/nginx/conf.d/
-      - ./static:/app/static
     depends_on:
       - backend 
       - frontend
