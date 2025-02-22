@@ -26,18 +26,18 @@ services:
     networks:
       - jwt-amd
 
-    nginx:
-      image: nginx:latest
-      container_name: nginx
-      ports:
-        - "80:80"
-      volumes:
-        - ./nginx/:/etc/nginx/conf.d/
-      depends_on:
-        - frontend
-        - backend
-      networks:
-        - jwt-amd
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/:/etc/nginx/conf.d/
+    depends_on:
+      - frontend
+      - backend
+    networks:
+      - jwt-amd
 
 networks:
   jwt-amd:
