@@ -11,7 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddCors(o => o.AddPolicy("MyPolicy", builder =>
 {
-    builder.WithOrigins("http://localhost:8080").AllowAnyMethod().AllowAnyHeader();
+    builder.WithOrigins("http://www.dizci.ctf").AllowAnyMethod().AllowAnyHeader();
 }));
 
 builder.Services.AddScoped<IStudentService, StudentRepository>();
