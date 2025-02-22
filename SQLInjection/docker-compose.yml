@@ -5,11 +5,13 @@ services:
     image: postgres:latest
     restart: unless-stopped
     environment:
-      - POSTGRES_USER=root
+      - POSTGRES_USER=baho
       - POSTGRES_PASSWORD=secret
-      - POSTGRES_DB=sql_injection
-    ports:
-      - "5433:5432"
+      - POSTGRES_DB=mydb
+    networks:
+      - sqli
+    expose:
+      - 5432
 
   backend:
     build:
@@ -18,9 +20,18 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - DB_SOURCE=postgresql://root:secret@postgres:5432/sql_injection?sslmode=disable
+      - DB_SOURCE=postgresql://baho:secret@postgres:5432/mydb?sslmode=disable
     depends_on:
       - postgres
     volumes:
-      - ./backend:/app
+      - backend:/app
+    restart: always
+    networks:
+      - sqli
+
+volumes:
+ backend:
+
+networks:
+  sqli:
 
