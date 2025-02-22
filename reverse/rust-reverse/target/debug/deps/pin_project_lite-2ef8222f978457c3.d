@@ -1,0 +1,7 @@
+/home/faruk/Project/SKYDAYS-CTF-25-lomar/reverse/rust-reverse/target/debug/deps/libpin_project_lite-2ef8222f978457c3.rmeta: /home/faruk/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pin-project-lite-0.2.16/src/lib.rs
+
+/home/faruk/Project/SKYDAYS-CTF-25-lomar/reverse/rust-reverse/target/debug/deps/libpin_project_lite-2ef8222f978457c3.rlib: /home/faruk/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pin-project-lite-0.2.16/src/lib.rs
+
+/home/faruk/Project/SKYDAYS-CTF-25-lomar/reverse/rust-reverse/target/debug/deps/pin_project_lite-2ef8222f978457c3.d: /home/faruk/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pin-project-lite-0.2.16/src/lib.rs
+
+/home/faruk/.cargo/registry/src/index.crates.io-6f17d22bba15001f/pin-project-lite-0.2.16/src/lib.rs:
