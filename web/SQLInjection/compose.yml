@@ -39,14 +39,12 @@ services:
     networks:
       - sqli
 
-
   nginx:
     image: nginx:latest
     ports:
       - "80:80"
     volumes:
       - ./nginx/:/etc/nginx/conf.d/
-      - ./static:/app/static
     depends_on:
       - backend 
       - frontend
