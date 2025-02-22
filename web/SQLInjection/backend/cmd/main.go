@@ -27,12 +27,12 @@ func main() {
 
 	// CORS ayarları
 	r.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"http://www.localhost.com"},
+		AllowOrigins:     []string{"http://www.skyinjection.ctf"},
 		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		AllowHeaders:     []string{"Content-Type", "Authorization"},
 		AllowCredentials: true,
 		AllowOriginFunc: func(origin string) bool {
-			return origin == "http://www.localhost.com"
+			return origin == "http://www.skyinjection.ctf"
 		},
 	}))
 

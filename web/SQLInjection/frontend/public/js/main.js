@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Takımları API'den al
     async function fetchTeams() {
         try {
-            const response = await fetch('http://api.localhost.com/api/teams');
+            const response = await fetch('http://api.skyinjection.ctf/api/teams');
             if (!response.ok) {
                 throw new Error('Takımlar yüklenirken hata oluştu');
             }
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Takım detaylarını API'den al
     async function fetchTeamDetails(teamId) {
         try {
-            const response = await fetch(`http://api.localhost.com/api/teams/${teamId}`);
+            const response = await fetch(`http://api.skyinjection.ctf/api/teams/${teamId}`);
             if (!response.ok) {
                 throw new Error('Takım detayları yüklenirken hata oluştu');
             }
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Geçmiş liderleri API'den al
     async function fetchPastLeaders(teamId) {
         try {
-            const response = await fetch(`http://api.localhost.com/api/teams/${teamId}/past-leaders`);
+            const response = await fetch(`http://api.skyinjection.ctf/api/teams/${teamId}/past-leaders`);
             if (!response.ok) {
                 throw new Error('Geçmiş liderler yüklenirken hata oluştu');
             }
