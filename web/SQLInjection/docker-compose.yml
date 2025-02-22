@@ -29,9 +29,32 @@ services:
     networks:
       - sqli
 
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    restart: always
+    networks:
+      - sqli
+
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/:/etc/nginx/conf.d/
+      - ./static:/app/static
+    depends_on:
+      - backend 
+      - frontend
+    networks:
+      - sqli
+
 volumes:
- backend:
+  backend:
 
 networks:
   sqli:
-
