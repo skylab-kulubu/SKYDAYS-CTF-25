@@ -1,0 +1,11 @@
+/home/faruk/Project/SKYDAYS-CTF-25-lomar/reverse/rust-reverse/target/release/deps/libsocket2-f27d865bcbc91a6b.rmeta: /home/faruk/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.8/src/lib.rs /home/faruk/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.8/src/sockaddr.rs /home/faruk/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.8/src/socket.rs /home/faruk/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.8/src/sockref.rs /home/faruk/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.8/src/sys/unix.rs
+
+/home/faruk/Project/SKYDAYS-CTF-25-lomar/reverse/rust-reverse/target/release/deps/libsocket2-f27d865bcbc91a6b.rlib: /home/faruk/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.8/src/lib.rs /home/faruk/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.8/src/sockaddr.rs /home/faruk/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.8/src/socket.rs /home/faruk/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.8/src/sockref.rs /home/faruk/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.8/src/sys/unix.rs
+
+/home/faruk/Project/SKYDAYS-CTF-25-lomar/reverse/rust-reverse/target/release/deps/socket2-f27d865bcbc91a6b.d: /home/faruk/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.8/src/lib.rs /home/faruk/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.8/src/sockaddr.rs /home/faruk/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.8/src/socket.rs /home/faruk/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.8/src/sockref.rs /home/faruk/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.8/src/sys/unix.rs
+
+/home/faruk/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.8/src/lib.rs:
+/home/faruk/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.8/src/sockaddr.rs:
+/home/faruk/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.8/src/socket.rs:
+/home/faruk/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.8/src/sockref.rs:
+/home/faruk/.cargo/registry/src/index.crates.io-6f17d22bba15001f/socket2-0.5.8/src/sys/unix.rs:
