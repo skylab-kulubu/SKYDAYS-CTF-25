@@ -10,6 +10,8 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
     restart: unless-stopped
+    networks:
+      - jwt-amd
 
   frontend:
     build:
@@ -20,3 +22,10 @@ services:
     depends_on:
       - backend
     restart: unless-stopped
+    networks:
+      - jwt-amd
+
+
+networks:
+  jwt-amd:
+
