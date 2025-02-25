@@ -1,3 +1,14 @@
+# HCloud Kurulum
+
+```bash
+#!/bin/bash
+hcloud network create --name skydays-internal --ip-range 172.16.0.0/24
+hcloud network add-subnet --type cloud --network-zone 172.16.0.0/24 skydays-internal
+hcloud server create --image ubuntu-24.04 --name skydays-bind --type cpx41 --ssh-key faruk@lomaroid --without-ipv6 --network skydays-internal
+hcloud server create --image ubuntu-24.04 --name skydays-vpn --type cpx41 --ssh-key faruk@lomaroid --without-ipv6 --network skydays-internal
+hcloud server create --image ubuntu-24.04 --name skydays-questions --type cpx41 --ssh-key faruk@lomaroid --without-ipv6 --network skydays-internal
+```
+
 # Kullanıcı Bilgilendirmesi
 
 ## VPN Ağına Bağlanma

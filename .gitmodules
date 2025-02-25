@@ -1,0 +1,3 @@
+[submodule "legendary-train"]
+  path = reverse/rust-reverse/legendary-train
+  url = https://github.com/El0mar/legendary-train

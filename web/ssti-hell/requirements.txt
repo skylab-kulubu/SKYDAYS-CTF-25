@@ -1,0 +1,3 @@
+flask
+gunicorn
+mysql-connector-python
