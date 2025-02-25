@@ -1,1 +1,1 @@
-docker run --rm -v $(pwd)/output:/output $(docker build . -q)
+docker build -t lomarkomar/rust-reverse-builder:latest .

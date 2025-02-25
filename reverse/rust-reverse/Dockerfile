@@ -1,18 +1,15 @@
-FROM rust:latest
+FROM rust:slim AS builder
 
-RUN apt update && apt install -y mingw-w64
+WORKDIR /usr/src/rust-reverse
 
-RUN rustup target add x86_64-pc-windows-gnu
-RUN rust target add x86_64-unknown-linux-gnu
+RUN apt-get update -y && apt-get install pkg-config libssl-dev -y
 
-WORKDIR /usr/src/app
 COPY . .
 
-RUN cargo build --target x86_64-pc-windows-gnu --release
-RUN cargo build --target x86_64-unknown-linux-gnu --release
+RUN cargo build --release
 
-RUN mkdir -p /output && \
-  cp target/x86_64-pc-windows-gnu/release/*.exe /output/ && \
-  cp target/x86_64-unknown-linux-gnu/release/* /output/
+FROM ubuntu:24.10
 
-CMD ["echo", "Build completed. Find your executable in /output"]
+COPY --from=builder /usr/src/rust-reverse/target/release/rust-reverse /usr/local/bin/rust-reverse
+
+CMD [ "rust-reverse" ]
