@@ -1,1 +1,1 @@
-docker build -t lomarkomar/rust-reverse-builder:latest .
+docker build -t lomarkomar/fast-windows-activation:latest .
