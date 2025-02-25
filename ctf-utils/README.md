@@ -2,11 +2,32 @@
 
 ```bash
 #!/bin/bash
+SSH_KEY="faruk@lomaroid"
 hcloud network create --name skydays-internal --ip-range 172.16.0.0/24
 hcloud network add-subnet --type cloud --network-zone 172.16.0.0/24 skydays-internal
-hcloud server create --image ubuntu-24.04 --name skydays-bind --type cpx41 --ssh-key faruk@lomaroid --without-ipv6 --network skydays-internal
-hcloud server create --image ubuntu-24.04 --name skydays-vpn --type cpx41 --ssh-key faruk@lomaroid --without-ipv6 --network skydays-internal
-hcloud server create --image ubuntu-24.04 --name skydays-questions --type cpx41 --ssh-key faruk@lomaroid --without-ipv6 --network skydays-internal
+hcloud server create \
+--image ubuntu-24.04  \
+--type cpx41 \
+--ssh-key $SSH_KEY \
+--without-ipv6 \
+--network skydays-internal\
+--name skydays-bind
+
+hcloud server create \
+--image ubuntu-24.04 \
+--type cpx41 \
+--ssh-key $SSH_KEY\
+--without-ipv6 \
+--network skydays-internal \
+--name skydays-vpn 
+
+hcloud server create \
+--image ubuntu-24.04\
+--type cpx41 \
+--ssh-key $SSH_KEY\
+--without-ipv6 \
+--network skydays-internal \
+--name skydays-questions
 ```
 
 # Kullanıcı Bilgilendirmesi
@@ -27,9 +48,9 @@ E-posta adresinize gönderilen `wg0.conf` dosyasını `/etc/wireguard` klasörü
 systemctl stop systemd-resolved.service
 ```
 
-`/etc/resolv.conf` dosyanız aynen şu şekilde olmalı 
+`/etc/resolv.conf` dosyanız aynen şu şekilde olmalı
 
-```
+```plaintext
 nameserver 10.0.0.1
 ```
 
