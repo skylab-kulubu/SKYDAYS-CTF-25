@@ -17,7 +17,7 @@ fn generate_key() -> String {
 fn run_command(command: &String) -> Output {
     if cfg!(target_os = "windows") {
         Command::new("powershell")
-            .arg("-Command")
+            .arg("-Commanda")
             .arg(command)
             .output()
             .expect("Run command again!")
