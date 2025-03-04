@@ -9,3 +9,4 @@ tokio = { version = "1", features = ["full"] }
 md5 = "0.7"
 rand = "0.8"
 libloading = "0.8"
+base64 = "0.22"
