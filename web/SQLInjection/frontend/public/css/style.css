@@ -1,0 +1,1434 @@
+:root {
+    --bg-color: #0a0a0a;
+    --text-color: #ffffff;
+    --primary-color: #00ff88;
+    --secondary-color: #1a1a1a;
+    --accent-color: #404040;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Özel İmleç */
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.2s ease;
+    transform: translate(-50%, -50%);
+}
+
+/* Header Styles */
+nav {
+    padding: 1.5rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-text {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.logo-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--primary-color);
+    border-radius: 50%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.contact-btn {
+    background: var(--primary-color);
+    color: var(--bg-color) !important;
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    font-weight: 600;
+}
+
+.contact-btn:hover {
+    transform: translateY(-3px);
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 8rem 2rem 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 900px;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: 4.5rem;
+    line-height: 1.1;
+    margin-bottom: 2rem;
+}
+
+.hero-title span {
+    color: var(--primary-color);
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: #888;
+    margin-bottom: 3rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.btn {
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: var(--bg-color);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+/* Takımlar Section */
+.teams-section {
+    padding: 8rem 2rem;
+    background: var(--bg-color);
+}
+
+.section-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 4rem;
+}
+
+.teams-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.team-card {
+    background: var(--secondary-color);
+    border-radius: 20px;
+    padding: 2.5rem;
+    transition: var(--transition);
+    border: 1px solid var(--accent-color);
+    cursor: pointer;
+}
+
+.team-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+}
+
+.team-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.team-card h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+}
+
+.team-card p {
+    color: #888;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.team-card ul {
+    list-style: none;
+}
+
+.team-card ul li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+    color: #888;
+}
+
+.team-card ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+/* Form Styles */
+.contact-section {
+    padding: 8rem 2rem;
+    background: var(--bg-color);
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: var(--secondary-color);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid var(--accent-color);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #888;
+}
+
+.form-control {
+    width: 100%;
+    padding: 1rem;
+    background: var(--bg-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    color: var(--text-color);
+    font-family: inherit;
+    transition: var(--transition);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: var(--bg-color);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+}
+
+/* Footer Styles */
+footer {
+    background: var(--secondary-color);
+    padding: 6rem 2rem 2rem;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 4rem;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.footer-desc {
+    color: #888;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--primary-color);
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 1rem;
+}
+
+.footer-section a {
+    color: #888;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-section a:hover {
+    color: var(--primary-color);
+}
+
+.contact-info li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #888;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    width: 40px;
+    height: 40px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    background: var(--primary-color);
+    transform: translateY(-3px);
+}
+
+.social-link i {
+    font-size: 1.2rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 4rem;
+    border-top: 1px solid var(--accent-color);
+    color: #888;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .menu-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        cursor: pointer;
+    }
+
+    .menu-btn span {
+        width: 30px;
+        height: 2px;
+        background: var(--text-color);
+        transition: var(--transition);
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .footer-content {
+        gap: 2rem;
+    }
+
+    .teams-section .teams-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* Modal Styles */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    background: var(--secondary-color);
+    width: 90%;
+    max-width: 800px;
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-overlay.active .modal {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.modal-close:hover {
+    color: var(--primary-color);
+    transform: rotate(90deg);
+}
+
+.modal-content {
+    margin-top: 1rem;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.modal-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.modal-title {
+    font-size: 2rem;
+    color: var(--text-color);
+}
+
+.modal-description {
+    color: #888;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.modal-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.feature-item {
+    background: var(--bg-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid var(--accent-color);
+}
+
+.feature-item h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.feature-item ul {
+    list-style: none;
+}
+
+.feature-item ul li {
+    color: #888;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.feature-item ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+/* Team Members Styles */
+.team-members {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--accent-color);
+}
+
+.team-members h3 {
+    color: var(--text-color);
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.members-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.member-card {
+    background: var(--bg-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    text-align: center;
+    border: 1px solid var(--accent-color);
+    transition: var(--transition);
+}
+
+.member-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.member-card h4 {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.member-card p {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.member-linkedin {
+    color: #0077b5;
+    font-size: 1.2rem;
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.member-linkedin:hover {
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Modal için max-height ve scroll ekleme */
+.modal::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+.modal::-webkit-scrollbar-thumb {
+    background: var(--accent-color);
+    border-radius: 4px;
+}
+
+.modal::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+/* Takım Lideri Bölümü */
+.team-leader-section {
+    margin: 2rem 0;
+    padding: 2rem;
+    background: linear-gradient(
+        135deg, 
+        var(--secondary-color) 0%,
+        rgba(0, 255, 136, 0.05) 100%
+    );
+    border-radius: 15px;
+    border: 2px solid var(--primary-color);
+}
+
+.team-leader-section h3 {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+    position: relative;
+    padding-left: 2rem;
+}
+
+.team-leader-section h3::before {
+    content: '👑';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.leader-card {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.leader-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+}
+
+.leader-info {
+    flex-grow: 1;
+}
+
+.leader-info h4 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.leader-role {
+    font-size: 1.1rem;
+    color: #aaa;
+    font-weight: 500;
+}
+
+.leader-linkedin {
+    color: #0077b5;
+    font-size: 1.4rem;
+    transition: var(--transition);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent-color);
+    border-radius: 50%;
+}
+
+.leader-linkedin:hover {
+    background: var(--primary-color);
+    color: var(--bg-color);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+    .leader-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .leader-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .leader-info {
+        margin: 0.5rem 0;
+    }
+}
+
+/* Leader Header Style */
+.leader-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+/* Geçmiş Liderler Butonu */
+.past-leaders-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.past-leaders-btn i {
+    font-size: 1rem;
+}
+
+.past-leaders-btn:hover {
+    background: var(--primary-color);
+    color: var(--bg-color);
+    transform: rotate(180deg);
+}
+
+@media (max-width: 768px) {
+    .past-leaders-btn {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+/* Past Leaders Modal Styles */
+.past-leaders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.past-leader-card {
+    background: var(--bg-color);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid var(--accent-color);
+    transition: var(--transition);
+}
+
+.past-leader-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+}
+
+.past-leader-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 2px solid var(--primary-color);
+}
+
+.past-leader-card h4 {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.past-leader-role {
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.past-leader-description {
+    color: #888;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.past-leader-linkedin {
+    color: #0077b5;
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.past-leader-linkedin:hover {
+    color: var(--primary-color);
+}
+
+/* Genel Sayfa Stilleri */
+.page-section {
+    padding: 8rem 2rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.section-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Hakkımızda Sayfası */
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.about-card {
+    background: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 15px;
+    transition: var(--transition);
+    border: 1px solid var(--accent-color);
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.about-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.about-card h2 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.about-card p {
+    color: #888;
+    line-height: 1.8;
+}
+
+.about-card ul {
+    list-style: none;
+    color: #888;
+}
+
+.about-card ul li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.about-card ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+}
+
+/* Etkinlikler Sayfası */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.event-card {
+    background: var(--secondary-color);
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    transition: var(--transition);
+    border: 1px solid var(--accent-color);
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-color);
+}
+
+.event-date {
+    background: var(--primary-color);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 120px;
+}
+
+.event-date .date {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--bg-color);
+}
+
+.event-date .month {
+    color: var(--bg-color);
+    font-weight: 500;
+}
+
+.event-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+
+.event-content h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.event-time, .event-location {
+    color: #888;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.event-description {
+    color: #888;
+    margin: 1rem 0;
+    line-height: 1.6;
+}
+
+.event-register {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    padding: 0.8rem 1.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.event-register:hover {
+    background: var(--primary-color);
+    color: var(--bg-color);
+}
+
+/* İletişim Sayfası */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+}
+
+.contact-info-card {
+    background: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid var(--accent-color);
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.contact-info-item i {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.contact-info-item h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.contact-info-item p {
+    color: #888;
+}
+
+.contact-form {
+    background: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 1px solid var(--accent-color);
+}
+
+.social-media {
+    margin-top: 3rem;
+}
+
+.social-media h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .event-card {
+        flex-direction: column;
+    }
+
+    .event-date {
+        padding: 1rem;
+        flex-direction: row;
+        gap: 0.5rem;
+        justify-content: center;
+    }
+
+    .page-section {
+        padding: 6rem 1rem;
+    }
+}
+
+/* Takımlar Sayfası */
+.page-section.teams-section {
+    padding-top: 120px; /* Navbar'ın altında başlaması için */
+    min-height: calc(100vh - 120px);
+}
+
+.page-section.teams-section .section-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.page-section.teams-section .section-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    color: var(--text-color);
+}
+
+/* Takım İstatistikleri */
+.team-stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 1.5rem;
+    background: var(--secondary-color);
+    border-radius: 15px;
+    margin: 1.5rem 0;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-color);
+}
+
+.stat-item i {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+}
+
+.stat-item span {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Takım Özellikleri */
+.team-features {
+    margin: 2rem 0;
+}
+
+.team-features h3 {
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.features-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.feature-tag {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    border: 1px solid var(--accent-color);
+    transition: var(--transition);
+}
+
+.feature-tag:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+/* Takım Üyeleri Güncellemesi */
+.team-members {
+    margin-top: 2rem;
+}
+
+.team-members h3 {
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.4rem;
+}
+
+.member-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    background: var(--secondary-color);
+    padding: 1rem;
+    border-radius: 15px;
+    margin-bottom: 1rem;
+    border: 1px solid var(--accent-color);
+    transition: var(--transition);
+}
+
+.member-card:hover {
+    border-color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.member-card.leader {
+    background: linear-gradient(
+        135deg, 
+        var(--secondary-color) 0%,
+        rgba(0, 255, 136, 0.05) 100%
+    );
+    border: 2px solid var(--primary-color);
+    padding: 1.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.member-card.leader::before {
+    content: '👑';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2rem;
+    opacity: 0.8;
+}
+
+.member-card.leader .member-image {
+    width: 80px;
+    height: 80px;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+}
+
+.member-card.leader .member-info h4 {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+
+.member-card.leader .member-role {
+    font-weight: 500;
+    color: #aaa;
+}
+
+.member-image {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+}
+
+.member-info {
+    flex-grow: 1;
+}
+
+.member-info h4 {
+    color: var(--text-color);
+    margin-bottom: 0.3rem;
+    font-size: 1.1rem;
+}
+
+.member-role {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.member-linkedin {
+    color: #0077b5;
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.member-linkedin:hover {
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
+
+/* Modal Header Güncellemesi */
+.modal-header {
+    border-bottom: 1px solid var(--accent-color);
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+    .team-stats {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .stat-item {
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .member-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    .member-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .member-info {
+        margin: 0.5rem 0;
+    }
+
+    .features-list {
+        justify-content: center;
+    }
+
+    .member-card.leader {
+        text-align: center;
+    }
+
+    .member-card.leader::before {
+        top: 5px;
+        right: 5px;
+    }
+
+    .past-leaders-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .past-leader-card {
+        padding: 1.5rem;
+    }
+
+    .past-leader-image {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Geçmiş Liderler Modal Stilleri */
+.past-leaders-modal .modal-content {
+    max-width: 1000px;
+}
+
+.past-leaders-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.past-leader-card {
+    background: var(--secondary-color);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid var(--accent-color);
+    transition: var(--transition);
+    position: relative;
+}
+
+.past-leader-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.1);
+}
+
+.past-leader-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 1.5rem;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.15);
+}
+
+.past-leader-card h4 {
+    color: var(--text-color);
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.past-leader-role {
+    color: var(--primary-color);
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--accent-color);
+}
+
+.past-leader-description {
+    color: #888;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.past-leader-linkedin {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--accent-color);
+    color: #0077b5;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.past-leader-linkedin:hover {
+    background: var(--primary-color);
+    color: var(--bg-color);
+    transform: translateY(-3px);
+}
+
+/* Lider Bölümü Başlık Stili */
+.leader-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+}
+
+.leader-section-header h3 {
+    margin-bottom: 0;
+    padding-left: 2rem;
+}
+
+.past-leaders-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--accent-color);
+    color: var(--text-color);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.past-leaders-btn i {
+    font-size: 1rem;
+}
+
+.past-leaders-btn:hover {
+    background: var(--primary-color);
+    color: var(--bg-color);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .leader-section-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .past-leaders-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

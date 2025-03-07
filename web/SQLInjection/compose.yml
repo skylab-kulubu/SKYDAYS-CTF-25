@@ -1,0 +1,54 @@
+version: '3.9'
+
+services:
+  postgres:
+    image: postgres:latest
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=baho
+      - POSTGRES_PASSWORD=secret
+      - POSTGRES_DB=mydb
+    networks:
+      - sqli
+    expose:
+      - 5432
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      - DB_SOURCE=postgresql://baho:secret@postgres:5432/mydb?sslmode=disable
+    depends_on:
+      - postgres
+    volumes:
+      - backend:/app
+    restart: always
+    networks:
+      - sqli
+
+  frontend:
+    build: 
+      context: ./frontend
+      dockerfile: Dockerfile
+    restart: always
+    networks:
+      - sqli
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/:/etc/nginx/conf.d/
+    depends_on:
+      - backend 
+      - frontend
+    networks:
+      - sqli
+
+volumes:
+  backend:
+
+networks:
+  sqli:
