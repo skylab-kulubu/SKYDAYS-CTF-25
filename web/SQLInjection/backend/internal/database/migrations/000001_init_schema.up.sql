@@ -121,12 +121,12 @@ INSERT INTO team_features (team_id, feature, created_at, updated_at) VALUES
 INSERT INTO team_members (team_id, name, role, is_leader, image, linkedin, created_at, updated_at) VALUES 
 -- SkySec Üyeleri
 (1, 'Ahmet Güvenli', 'Güvenlik Araştırmacısı', true, 'https://ui-avatars.com/api/?name=Ahmet+Guvenli', 'https://linkedin.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-(1, 'Zeynep Koruma', 'Penetrasyon Test Uzmanı', false, 'https://ui-avatars.com/api/?name=Zeynep+Koruma', 'https://linkedin.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+(1, 'O. Turan', 'Penetrasyon Test Uzmanı', false, 'https://ui-avatars.com/api/?name=Zeynep+Koruma', 'https://linkedin.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
 (1, 'Mehmet Siber', 'Güvenlik Analisti', false, 'https://ui-avatars.com/api/?name=Mehmet+Siber', 'https://linkedin.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
 
 -- SkySis Üyeleri
 (2, 'Ali Sistem', 'Sistem Yöneticisi', true, 'https://ui-avatars.com/api/?name=Ali+Sistem', 'https://linkedin.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-(2, 'Ayşe Network', 'Ağ Uzmanı', false, 'https://ui-avatars.com/api/?name=Ayse+Network', 'https://linkedin.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+(2, 'Eray Beylik', 'Ağ Uzmanı', false, 'https://ui-avatars.com/api/?name=Ayse+Network', 'https://linkedin.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
 (2, 'Can DevOps', 'DevOps Mühendisi', false, 'https://ui-avatars.com/api/?name=Can+DevOps', 'https://linkedin.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
 
 -- WebLab Üyeleri
@@ -160,11 +160,11 @@ INSERT INTO team_members (team_id, name, role, is_leader, image, linkedin, creat
 (8, 'Gizem Data', 'Veri Bilimci', false, 'https://ui-avatars.com/api/?name=Gizem+Data', 'https://linkedin.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 
-INSERT INTO past_leaders (team_id, name, period, description, image, linkedin, created_at, updated_at,deleted_at) VALUES  (3, 'ADMIN', 'FLAG', 'SKYDAYS25{SQL_INJECTION}', 'https://ui-avatars.com/api/?name=Serkan+Web', 'https://linkedin.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);
+INSERT INTO past_leaders (team_id, name, period, description, image, linkedin, created_at, updated_at,deleted_at) VALUES  (3, 'ADMIN', 'FLAG', 'SKYDAYS{G0T_$QL_1NJ£CT10N}', 'https://ui-avatars.com/api/?name=Serkan+Web', 'https://linkedin.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);
 
 -- Geçmiş liderleri ekle
 INSERT INTO past_leaders (team_id, name, period, description, image, linkedin, created_at, updated_at) VALUES 
-(1, 'Mustafa Güven', '2020-2022', 'Şu anda Microsoft Security ekibinde çalışıyor.', 'https://ui-avatars.com/api/?name=Mustafa+Guven', 'https://linkedin.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+(1, 'Omer Erdem', '2020-2022', 'Şu anda Microsoft Security ekibinde çalışıyor.', 'https://ui-avatars.com/api/?name=Mustafa+Guven', 'https://linkedin.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
 (2, 'Fatma Ağ', '2021-2023', 'Amazon AWS DevOps ekibinde çalışıyor.', 'https://ui-avatars.com/api/?name=Fatma+Ag', 'https://linkedin.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
 (3, 'Serkan Web', '2020-2022', 'Google Frontend ekibinde çalışıyor.', 'https://ui-avatars.com/api/?name=Serkan+Web', 'https://linkedin.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
 (4, 'Aylin Mobile', '2020-2023', 'Apple iOS ekibinde çalışıyor.', 'https://ui-avatars.com/api/?name=Aylin+Mobile', 'https://linkedin.com', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
