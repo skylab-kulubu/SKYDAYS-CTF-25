@@ -1,10 +1,11 @@
-version: '3.8'
+version: "3.8"
 
 services:
-  web:
+  lomar-web:
     image: lomarkomar/ssti-hell:latest
     networks:
       - ssti
+      - shared
     environment:
       - DB_HOST=db
       - DB_USER=sqluser
@@ -15,7 +16,7 @@ services:
     restart: always
     expose:
       - 5000
-  db:
+  lomar-db:
     image: mysql
     restart: always
     environment:
@@ -30,21 +31,11 @@ services:
     volumes:
       - db:/var/lib/mysql
 
-  nginx:
-    image: nginx:latest
-    ports:
-      - "10.0.0.1:8002:80"
-    volumes:
-      - ./nginx/:/etc/nginx/conf.d/
-      - ./static:/app/static
-    depends_on:
-      - web
-    networks:
-      - ssti
-
 volumes:
   static:
   db:
 
 networks:
   ssti:
+  shared:
+    external: true

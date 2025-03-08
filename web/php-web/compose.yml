@@ -1,5 +1,11 @@
 services:
-  php:
+  php-web:
     image: coduronin/php-web
     ports:
-     - 127.0.0.1:8003:80
+      - 127.0.0.1:8003:80
+    networks:
+      - shared
+
+networks:
+  shared:
+    external: true

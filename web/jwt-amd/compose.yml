@@ -1,10 +1,10 @@
-version: '3.8'
+version: "3.8"
 
 services:
-  backend:
+  amd-backend:
     #build:
-     # context: ./jwt-ctf-backend
-     # dockerfile: Dockerfile
+    # context: ./jwt-ctf-backend
+    # dockerfile: Dockerfile
     image: amahird/backend.dizci.ctf
     expose:
       - 7106
@@ -13,8 +13,9 @@ services:
     restart: unless-stopped
     networks:
       - jwt-amd
+      - shared
 
-  frontend:
+  amd-frontend:
     image: amahird/frontend.dizci.ctf
     expose:
       - 80
@@ -23,20 +24,9 @@ services:
     restart: unless-stopped
     networks:
       - jwt-amd
-
-  nginx:
-    image: nginx:latest
-    container_name: nginx
-    ports:
-      - "80:80"
-    volumes:
-      - ./nginx/:/etc/nginx/conf.d/
-    depends_on:
-      - frontend
-      - backend
-    networks:
-      - jwt-amd
+      - shared
 
 networks:
   jwt-amd:
-
+  shared:
+    external: true
