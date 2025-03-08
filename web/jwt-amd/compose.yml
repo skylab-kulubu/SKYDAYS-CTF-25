@@ -20,7 +20,7 @@ services:
     expose:
       - 80
     depends_on:
-      - backend
+      - amd-backend
     restart: unless-stopped
     networks:
       - jwt-amd

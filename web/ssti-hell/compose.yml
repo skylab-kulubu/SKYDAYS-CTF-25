@@ -7,12 +7,12 @@ services:
       - ssti
       - shared
     environment:
-      - DB_HOST=db
+      - DB_HOST=lomar-db
       - DB_USER=sqluser
       - DB_PASSWORD=Wm!$5d4*@2!6s9
       - DB_NAME=notes_app
     depends_on:
-      - db
+      - lomar-db
     restart: always
     expose:
       - 5000

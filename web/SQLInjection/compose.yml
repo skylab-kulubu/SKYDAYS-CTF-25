@@ -16,9 +16,9 @@ services:
   baho-backend:
     image: koixo/sqli_backend
     environment:
-      - DB_SOURCE=postgresql://baho:secret@postgres:5432/mydb?sslmode=disable
+      - DB_SOURCE=postgresql://baho:secret@baho-postgres:5432/mydb?sslmode=disable
     depends_on:
-      - postgres
+      - baho-postgres
     volumes:
       - backend:/app
     restart: always
