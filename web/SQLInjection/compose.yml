@@ -14,9 +14,7 @@ services:
       - 5432
 
   backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
+    image: koixo/sqli_backend
     environment:
       - DB_SOURCE=postgresql://baho:secret@postgres:5432/mydb?sslmode=disable
     depends_on:
@@ -28,9 +26,7 @@ services:
       - sqli
 
   frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile
+    image: koixo/sqli_frontend
     restart: always
     networks:
       - sqli
