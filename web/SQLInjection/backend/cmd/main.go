@@ -27,7 +27,7 @@ func main() {
 
 	// CORS ayarları
 	r.Use(cors.New(cors.Config{
-		AllowOrigins:     []string{"http://www.skyinjection.ctf"},
+		AllowOrigins:     []string{"http://www.skyinjection.ctf","http://api.skyinjection.ctf","http://skyinjection.ctf"},
 		AllowMethods:     []string{"GET", "POST", "PUT", "DELETE", "OPTIONS"},
 		AllowHeaders:     []string{"Content-Type", "Authorization"},
 		AllowCredentials: true,
