@@ -19,8 +19,8 @@ services:
       - WGUI_MANAGE_START=true
       - WGUI_MANAGE_RESTART=true
       # Custom Settings
-      - WGUI_DEFAULT_CLIENT_ALLOWED_IPS=10.0.0.0/8
-      - WGUI_SERVER_INTERFACE_ADDRESSES=10.0.0.0/8
+      - WGUI_DEFAULT_CLIENT_ALLOWED_IPS=10.0.0.0/16
+      - WGUI_SERVER_INTERFACE_ADDRESSES=10.10.0.0/16,10.0.0.0/16
       - WGUI_SERVER_POST_UP_SCRIPT=iptables -t nat -A POSTROUTING -s 10.0.0.0/8 -o eth0 -j MASQUERADE; iptables -A INPUT -p udp -m udp --dport 51820 -j ACCEPT; iptables -A FORWARD -i wg0 -j ACCEPT; iptables -A FORWARD -o wg0 -j ACCEPT;
       - WGUI_DEFAULT_CLIENT_USE_SERVER_DNS=false
       # EMAIL options
