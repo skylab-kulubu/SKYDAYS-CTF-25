@@ -9,7 +9,7 @@ namespace ReverseEngineeringCtf
     {
         private readonly string TrueAnswer = "72";
         private readonly string FlagAnswer = "apWM2-D0VMA2j92K-!*3M8U3N0Fjsg3830ga8 2ujMFT4H3*-";
-        private readonly string Flag = "1zqhZ3B5Q17ZBhZSMMUHV0rWW4ajJ7sRinbPq0HwwEo9Ns0aA3TxoffvRtUUOa1jwdQBLx//vKAnVmRbC7dbBziv6TorLf9zZWGR8A4NWs4=";
+        private readonly string Flag = "uiUkwM7nvjUBL3nVV5qWnG+X4bKtDNABDDgNuWBbdPD1CrBicaMLvXpkrjX8oY9JKuaMZ6mPcWhxlJ46vJpWCc0Nsuko1l20vy2cbWIc7Pc=";
         private static readonly int KeySize = 256;
         private static readonly int BlockSize = 128;
         private static readonly int SaltSize = 16;
@@ -49,7 +49,6 @@ namespace ReverseEngineeringCtf
                 MessageBox.Show("Yanlış cevap");
             }
         }
-
 
         public static string Decrypt(string encryptedText)
         {
