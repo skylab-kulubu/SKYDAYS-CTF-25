@@ -18,3 +18,7 @@ ufw allow 51820/udp
 ufw reload
 
 ufw enable
+
+# Wireguard Logs
+iptables -I FORWARD -i wg0 -j LOG --log-prefix 'tunnel wireguard iptables: ' --log-level 7
+iptables -I FORWARD -o wg0 -j LOG --log-prefix 'tunnel wireguard iptables: ' --log-level 7
