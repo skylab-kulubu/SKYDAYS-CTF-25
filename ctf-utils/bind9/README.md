@@ -2,6 +2,7 @@
 sudo apt update
 sudo apt install bind9 bind9utils bind9-doc dnsutils
 ```
+
 ```bash
 sudo vim  /etc/bind/named.conf
 include "/etc/bind/named.conf.local";
@@ -34,22 +35,19 @@ options {
 
 ```
 
-```bash 
+```bash
 sudo vim /etc/bind/db.skydays.ctf
-$TTL    604800
-@       IN      SOA     ns1.skydasys.ctf. admin.skydays.ctf. (
-                              2023021701 ; Serial
-                              604800     ; Refresh
-                              86400      ; Retry
-                              2419200    ; Expire
-                              604800 )   ; Negative Cache TTL
-;
-@       IN      NS      ns1.skydays.ctf.
-@       IN      NS      ns2.skydays.ctf.
-@       IN      A       192.168.1.1
-ns1     IN      A       192.168.1.1
-ns2     IN      A       192.168.1.2
-www     IN      A      10.0.0.1
+$TTL 86400
+@   IN  SOA ns.skydays.ctf. admin.skydays.ctf. (
+        2024030801  ; Serial
+        3600        ; Refresh
+        1800        ; Retry
+        604800      ; Expire
+        86400 )     ; Minimum TTL
+
+    IN  NS  ns.skydays.ctf.
+ns  IN  A   10.0.0.1
+@   IN  A   10.0.0.1
 
 ```
 

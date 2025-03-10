@@ -1,7 +1,7 @@
-version: '3.9'
+version: "3.9"
 
 services:
-  postgres:
+  baho-postgres:
     image: postgres:latest
     restart: unless-stopped
     environment:
@@ -13,42 +13,30 @@ services:
     expose:
       - 5432
 
-  backend:
-    build:
-      context: ./backend
-      dockerfile: Dockerfile
+  baho-backend:
+    image: koixo/sqli_backend
     environment:
-      - DB_SOURCE=postgresql://baho:secret@postgres:5432/mydb?sslmode=disable
+      - DB_SOURCE=postgresql://baho:secret@baho-postgres:5432/mydb?sslmode=disable
     depends_on:
-      - postgres
+      - baho-postgres
     volumes:
       - backend:/app
     restart: always
     networks:
       - sqli
+      - shared
 
-  frontend:
-    build: 
-      context: ./frontend
-      dockerfile: Dockerfile
+  baho-frontend:
+    image: koixo/sqli_frontend
     restart: always
     networks:
       - sqli
-
-  nginx:
-    image: nginx:latest
-    ports:
-      - "80:80"
-    volumes:
-      - ./nginx/:/etc/nginx/conf.d/
-    depends_on:
-      - backend 
-      - frontend
-    networks:
-      - sqli
+      - shared
 
 volumes:
   backend:
 
 networks:
   sqli:
+  shared:
+    external: true
