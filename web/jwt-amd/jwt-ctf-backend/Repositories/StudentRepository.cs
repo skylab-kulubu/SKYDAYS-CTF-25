@@ -76,7 +76,7 @@ namespace jwt_ctf_backend.Repositories
 
             if (homework.Equals(perfectStudent.Homework))
             {
-                return "SKYDAYS25{API_S3CUR1TY_AND_3NCRYPTION_IS_REALLY_1MPORT4NT}";  // flag döndür
+                return "SKYDAYS{API_S3CUR1TY_AND_3NCRYPTION_IS_REALLY_1MPORT4NT}";  // flag döndür
             }
 
             return "updated";  // update işlemini gerçekten yapmaya gerek yok
