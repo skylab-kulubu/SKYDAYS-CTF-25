@@ -1,0 +1,1 @@
+Projenin dosya yapısıyla oynamak programı bozabilir, o yüzden "binary" ve "resources" klasörlerine dokunmayınız.
