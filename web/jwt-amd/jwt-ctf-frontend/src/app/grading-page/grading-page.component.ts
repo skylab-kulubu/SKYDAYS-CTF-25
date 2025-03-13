@@ -26,10 +26,10 @@ export class GradingPageComponent implements OnInit {
       this.isLoggedIn = loggedIn;
     });
     const role = this.authService.getRole();
-    if(role != "teacher"){
+    if(role == null || !role.includes("teacher")){
       this.router.navigate(['/']);
     }
-    debugger
+
     this.route.queryParams.subscribe(params => {
       if (params['homework']) {
         this.homework = JSON.parse(params['homework']);
