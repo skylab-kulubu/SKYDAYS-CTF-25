@@ -39,13 +39,13 @@ To quickly set up and run this project, you can use Docker. The project is packa
    To pull the Docker image for this project, use the following command:
 
    ```bash
-   docker pull coduronin/php-web
+   docker pull coduronin/web-ctf
 
 2. **Run the Docker Container**  
    Once the image is pulled, run the container using this command:
 
    ```bash
-   docker run -p 8080:80 coduronin/php-web
+   docker run -p 8080:80 coduronin/web-ctf
 
 ## Solution
 
