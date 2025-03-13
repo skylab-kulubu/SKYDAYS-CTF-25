@@ -38,6 +38,8 @@
 - [reverse elf](/reverse/reverse%20elf)
 - [white flag](/reverse/white-flag)
 - [rust-reverse](/reverse/rust-reverse)
+- [meoware](/reverse/meoware)
+- [caesar-cipher](/reverse/caesar-cipher)
 
 ## Web
 
