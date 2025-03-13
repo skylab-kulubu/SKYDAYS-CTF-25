@@ -44,11 +44,13 @@ E-posta adresinize gönderilen `wg0.conf` dosyasını `/etc/wireguard` klasörü
 
 ## Alan Adlarına Erişim
 
+Eğer `systemd-resolved.service` servisi mevcutsa ve çalışır durumdaysa öncelikle kapatınız.
+
 ```bash
 systemctl stop systemd-resolved.service
 ```
 
-`/etc/resolv.conf` dosyanız aynen şu şekilde olmalı
+ardından `nameserver` ayarınızı değiştirmek için `/etc/resolv.conf` dosyanız aynen şu şekilde olmalı
 
 ```plaintext
 nameserver 10.0.0.1
