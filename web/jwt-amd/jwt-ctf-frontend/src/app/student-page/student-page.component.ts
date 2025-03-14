@@ -36,7 +36,7 @@ export class StudentPageComponent implements OnInit {
       this.isLoggedIn = loggedIn;
     });
     const role = this.authService.getRole();
-    if(role != "student"){
+    if(role == null || !role.includes("student")){
       this.router.navigate(['/']);
     }
     var id = this.authService.getId();

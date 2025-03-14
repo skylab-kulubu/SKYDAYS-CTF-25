@@ -24,25 +24,22 @@ export class TeacherPageComponent implements OnInit {
       this.isLoggedIn = loggedIn;
     });
     const role = this.authService.getRole();
-    if(role != "teacher"){
+    if(role === null || !role.includes("teacher")){
       this.router.navigate(['/']);
     }
 
     const token = this.authService.getToken();
     if(token != null){
       console.log(token)
-      this.cryptionService.encrypt(token).pipe(
-        switchMap((encryptedToken) => {
-          return this.teacherService.getStudents(encryptedToken);
-        })
-        ).subscribe({
-          next: (response) => {
-            this.students = response;
-          },
-          error: (err) => {
-            this.errMessage = "Beklenmeyen bir hata oluştu";
-          }
-        });  
+      this.teacherService.getStudents(token).subscribe({
+        next: (response) => {
+          this.students = response;
+        },
+        error: (err) => {
+          this.errMessage = "Beklenmeyen bir hata oluştu";
+        }
+      });
+        
     }
   }
 
@@ -60,7 +57,7 @@ export class TeacherPageComponent implements OnInit {
       homework = " ";
     }
     debugger
-    this.router.navigate([`/AkI-grade-homework-kEd/${student.studentId}`], { queryParams: { homework: JSON.stringify(homework), grade: student.grade, nameSurname: student.nameSurname} });
+    this.router.navigate([`/grade-homework/${student.studentId}`], { queryParams: { homework: JSON.stringify(homework), grade: student.grade, nameSurname: student.nameSurname} });
   }
 
   logOut(){
