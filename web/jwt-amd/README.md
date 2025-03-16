@@ -4,12 +4,12 @@
 
 1. **Ana Sayfa'ya git:**
    ```sh
-   http://www.dizci.ctf
+   http://dizci.ctf
    ```
 
 2. **Giriş bilgilerini al ve login sayfasına git:**
    ```sh
-   http://www.dizci.ctf/login
+   http://dizci.ctf/login
    ```
 
 3. **Burp Suite ile dinlemeye başla:**
@@ -48,17 +48,12 @@
 
 9. **Burp Suite'de token'ı güncelle ve paketin geçmesine izin ver:**
 
-10. **Gobuster ile buton yönlendirmesi olmayan sayfaları keşfet:**
-   ```sh
-   gobuster dir --url http://www.dizci.ctf -w /usr/share/wordlists/dirb/common.txt
-   ```
-
-11. **Keşfedilen www.dizci.ctf/mPz-students-RsL sayfasına git:**
+10. **Yönlendirilen http://dizci.ctf/students sayfasını incele:**
    ```sh
    Öğrencileri tek tek gezerek 100 alan öğrenciyi bul ve cevabını kopyala.
    ```
 
-12. **Flag'i al:**
+11. **Flag'i al:**
    ```sh
    - Sağlanan bilgiler ile giriş yap.
    - Kopyaladığın cevabı yapıştır ve ödevi kaydet.
