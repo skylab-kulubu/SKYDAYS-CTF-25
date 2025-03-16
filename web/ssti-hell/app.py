@@ -152,6 +152,8 @@ def view_note(note_id):
         title = escape(note[0])
         note_text = note[1]
         author = escape(note[2])
+        if session["username"] != author:
+            return redirect(url_for("index"))
         date = escape(note[3])
         return render_template_string(f'''
             <!DOCTYPE html>
