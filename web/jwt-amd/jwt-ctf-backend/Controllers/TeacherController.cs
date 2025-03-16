@@ -18,9 +18,11 @@ namespace jwt_ctf_backend.Controllers
         [HttpGet("GetStudents")]
         public async Task<ActionResult<List<StudentLight>>> GetStudents([FromHeader] string Authorization)
         {
+            Console.WriteLine(Authorization);
             if(await _teacherService.IsCredentialsValid(Authorization))
             {
                 var students = await _teacherService.GetStudents();
+                Console.WriteLine(students);
                 return Ok(students);
             }
             return BadRequest("Geçersiz öğretmen bilgisi");
