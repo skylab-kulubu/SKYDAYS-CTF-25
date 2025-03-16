@@ -53,7 +53,7 @@
    Öğrencileri tek tek gezerek 100 alan öğrenciyi bul ve cevabını kopyala.
    ```
 
-12. **Flag'i al:**
+11. **Flag'i al:**
    ```sh
    - Sağlanan bilgiler ile giriş yap.
    - Kopyaladığın cevabı yapıştır ve ödevi kaydet.
