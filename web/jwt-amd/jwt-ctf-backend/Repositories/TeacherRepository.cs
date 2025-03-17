@@ -52,16 +52,7 @@ namespace jwt_ctf_backend.Repositories
                 throw new FileNotFoundException("Öğretmen veritabanı json dosyası bulunamadı");
             }
 
-            token = _cryptionService.Decrypt(token);
             (string Id, string Role) credentials = _cryptionService.DecodeToken(token);
-
-            var jsonData = await File.ReadAllTextAsync(_teachersDbJson);
-            var teachers = JsonSerializer.Deserialize<List<Teacher>>(jsonData) ?? new List<Teacher>();
-            var teacher = teachers.FirstOrDefault(s => s.TeacherId == Guid.Parse(credentials.Id));
-            if (teacher == null)
-            {
-                return false;
-            }
 
             return credentials.Role == "teacher";
         }
