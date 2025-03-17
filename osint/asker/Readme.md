@@ -1,0 +1,1 @@
+Soruda tek spesifik bilgi Akkaya gibi görünüyor. Burayı arattığınızda League of Legends oyununda Garen isimli karakterin yaşam öyküsü açılıyor. Yaşam öyküsünü okursanız kız kardeşinin isminin Lux olduğunu göreceksiniz.
