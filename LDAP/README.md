@@ -282,7 +282,7 @@ memberOf: CN=Audit Team,OU=Gruplar,DC=SKYDAYS,DC=SC
 ```
 Bu kullanıcılar ile grupları bir şema ile birleştirdiğimizde aşağıda tablo oluşuyor.
 
-img
+![](img/Tablo.bmp)
 
 Bu tablo ile kullanıcılar ve grupların açıklamalarını incelediğimizde sistende bcrypt hashlerinin kullanıldığı öğreniyoruz ve sistemde en yetkili kullanıcıda b.avci olarak görünüyor. Buradan **IT** grubunun açıklamasına baktığımızda bcrypt hashinin ilk kısmını görüyoruz ```$2a$12$``` daha sonra bu gurunun altındaki ***Privileged Support*** grubunun açıklamasında bir hash parçası görüyoruz ```8Tk0fE/``` bu grubun içindeki **b.avci** kullanıcısınında açıklamasında bir hashin devamı olduğu görüyoruz ```PirMC3B3oARoTretI16N2tlmnB0kcB0PVn3zNPAolchStS``` bu hash parçalarını birleştirdiğimizde bütün bir bcrypt hashi elde ediyoruz.
 
