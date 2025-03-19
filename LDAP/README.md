@@ -147,7 +147,7 @@ Bulduğumuz kullanıcı adı ve şifresi.
 ```
 Çözülen Mesaj: u.ldap:AllahiniS3v3nHTBgel!n
 ```
-Buradan soruda ldap sorgusu ile devam edilmesi gerektiğinin ipucunu alıyoruz.
+Buradan soruda u.ldap kullanıcısının şifresini ```AllahiniS3v3nHTBgel!n``` olarak buluyoruz. Sonrasında ldap sorgusu ile devam edilmesi gerektiğinin ipucunu alıyoruz.
 
 # LDAP Sorgusu Kısmı
 
