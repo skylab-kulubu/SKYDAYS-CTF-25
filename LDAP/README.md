@@ -97,7 +97,7 @@ smb: \> get labyrinth.dll
 
 Daha sonra elde etiiğimiz dll dosyasını disassambly yaptığımızda içerisinde bir *decryptSecret* fonksiyonu olduğunu görüyoruz ve bu fonksiyonu tersine çevirdiğimizde ikinci kullanıcıyı ve şifresini elde ediyoruz
 
-image
+![](img/Labyrinth_DLL.png)
 
 Şifreyi bulmak için kullanılan python3 kodu.
 
@@ -322,7 +322,7 @@ Sonra kullanıcı içerisinde 2 dosya olduğunu görüyoruz
 ```
 Bu dosyaları okuttuğumuzda flagimsi.txt içerisinde flagin ```5c 36 e9 cb 6a 28 4b 7c 39 72 84 49 f5 f7 0f 12 c7 d6 7d a3 c6 53 e2 3c 44 20 53 87 9b e8 c3 0e e5 03 ba 7c 6e 3b``` byte'lar ile şifrelenmiş olduğunu görüyoruz. Ardından legacy.out klasörünü disassembly ettiğimizde.
 
-img
+![](img/Legacy_out.png)
 
 **Flag** ve **Secret** değerlerinin beraber RC4 ile şifrelendiğini görüyoruz. Bunun için önce secret değerini bulmalıyız secret değerinide **SMB** klasöründeki ilk kullanıcı bilgilerimiz ile erişemediğimiz ```Labyrinth``` klasöründen elde ediyoruz.
 ```
